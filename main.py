@@ -41,7 +41,6 @@ with psycopg2.connect(database='python_db', user='postgres', password='1h2j3v4f'
             print(curs.fetchall())
 
 
-
         def update_client(id_client, name_client=None, surname_client=None):
             curs.execute("""
             UPDATE client SET name=%s, surname=%s WHERE id=%s;
@@ -60,7 +59,6 @@ with psycopg2.connect(database='python_db', user='postgres', password='1h2j3v4f'
             SELECT * FROM info_client;
             """)
             print(curs.fetchall())
-
 
 
         def del_client(id_client):
@@ -83,6 +81,7 @@ with psycopg2.connect(database='python_db', user='postgres', password='1h2j3v4f'
             """, (id_client, id_info))
             conn.commit()
 
+       
         def find_client(name=None, surname=None, phone=None, email=None):
             curs.execute("""
             SELECT client name, surname FROM client
