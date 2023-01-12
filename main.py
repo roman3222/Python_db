@@ -6,7 +6,8 @@ from delete import del_client, del_phone, del_email
 from find import find_client
 from update import update_client, update_info
 
-with psycopg2.connect(database='python_db', user='postgres', password='1h2j3v4f') as conn:
+
+with psycopg2.connect(database='python_db', user='postgres', password='') as conn:
     with conn.cursor() as curs:
 
         create_table(curs)
